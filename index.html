@@ -1,54 +1,156 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript">
-    try {
-      setTimeout(function() {
-        // Redirect to current URL
-        window.location.replace('https://github.com/devappd');
-      }, 150);
-    } catch(err) {}
-    </script>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <title>devappd</title>
-    <style>
-      html, body {
-        height: 100%;
-      }
+<!DOCTYPE html>
+<html lang="en">
 
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #fff;
-      }
-      
-      body:not(.lapsed) #content {
-        display: none;
-      }
-      
-      body:not(.lapsed) #redirect {
-        display: block;
-      }
-      
-      body.lapsed #content {
-        display: block;
-      }
-      
-      body.lapsed #redirect {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="redirect">
-      <p><a href="https://github.com/devappd">Visit @devappd on GitHub...</a></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Z | Video Game Software Engineer</title>
+    <meta name="description" content="Portfolio of Marco Z, a video game software engineer with 7+ years of experience in AAA and indie game development. Specialized in HTML5 and C++.">
+    <meta name="color-scheme" content="dark">
+    <meta name="darkreader-lock">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Marco Z</h1>
+            <div class="profile-links">
+                <a href="mailto:devappd@outlook.com" class="profile-link">devappd@outlook.com</a>
+                <a href="https://github.com/devappd" target="_blank" rel="noopener noreferrer" class="profile-link">GitHub</a>
+            </div>
+            <p class="summary">
+                Video game software engineer with 4-1/2 years of experience in the AAA game industry and 3 years of experience in indie development. I work in the intersection of HTML5 and C++ games, pursuing high-fidelity experiences that perform on many devices, leveraging
+                the ubiquity of web browsers to reach a wide variety of players.
+            </p>
+        </header>
+
+        <main class="projects-container">
+            <!-- Unannounced Indie Game -->
+            <article class="project-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2 class="project-title">Unannounced Indie Game</h2>
+                        <span class="project-years">2026 - Present</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Haxe</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                    <p class="project-description">
+                        In my current project, I am building a puzzle game that can be played on many devices, including PC, mobile, and web browser platforms. I am leveraging my AAA experience to establish sustainable project standards and to implement a content creation pipeline
+                        that alleviates as much friction as possible for creative designers.
+                    </p>
+                </div>
+            </article>
+
+            <!-- ZeniMax Online Studios -->
+            <article class="project-card">
+                <div class="project-media">
+                    <img src="assets/zos-thumbnail.jpg" alt="ZeniMax Online Studios logo" class="project-thumbnail">
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2 class="project-title">ZeniMax Online Studios</h2>
+                        <span class="project-years">2021 - 2025</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C#/.NET</span>
+                    </div>
+                    <p class="project-description">
+                        Over four and a half years, I contributed to <a href="https://www.zenimaxonline.com/" target="_blank">ZeniMax Online</a>'s unannounced AAA MMORPG by designing automated testing pipelines. I worked in the game engine, build pipeline,
+                        and CI/CD system to optimize unit tests and run them to produce performance statistics. I also designed a GUI testing pipeline to validate our internal design tools which reduced our QA team's test time by 30%.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Roly Poly Putt -->
+            <article class="project-card">
+                <div class="project-media" data-detail="assets/rpp.gif">
+                    <img src="assets/rpp-thumbnail.jpg" alt="Roly Poly Putt thumbnail" class="project-thumbnail">
+                    <img src="" alt="Web browser demonstration of Roly Poly Putt" class="project-detail-img">
+                    <div class="spinner"></div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2 class="project-title">Roly Poly Putt</h2>
+                        <span class="project-years">2020</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">JS</span>
+                        <span class="tech-tag">WebAssembly (Emscripten)</span>
+                    </div>
+                    <p class="project-description">
+                        <a href="https://spaddlewit.com/RolyPolyPutt/" target="_blank">Roly Poly Putt</a> is a wacky physics-based 3D platformer released for iOS and Android where YOU are the golf ball! As a proof-of-concept, I ported the C++ game engine
+                        to run in web browsers via WebAssembly. I addressed the technical gap between how a traditional game is structured and how browsers operate. I designed a custom CMake-based build pipeline to automate compilation and asset packaging,
+                        bundling game resources into a browser-accessible virtual filesystem and configuring the output for WebGL rendering and multi-threaded execution.
+                    </p>
+                    <p class="project-description">
+                        Beyond the build system, I made targeted adaptations to the engine's C++ source at every layer of the stack. I restructured the traditional blocking game loop to yield control back to the browser each frame, replaced synchronous networking calls with
+                        async equivalents to keep the UI responsive, and rerouted filesystem operations through browser-compatible APIs since standard directory scanning doesn't function in the sandboxed web environment. I resolved audio compatibility
+                        challenges by offloading decoding to the browser's native engine, reducing WebAssembly runtime overhead. Throughout, I isolated all web-specific logic using compile-time guards, keeping the desktop and web codebases maintainable
+                        within a single source tree.
+                    </p>
+                    <p class="project-description">
+                        I released a few of these improvements on my <a href="https://github.com/devappd" target="_blank">GitHub profile</a>.
+                    </p>
+                    <div class="action-container">
+                        <a href="https://rpp-demo.surge.sh" target="_blank" rel="noopener noreferrer" class="btn">Play Game</a>
+                        <span class="action-info">Password: buzzybee. The linked demo works on desktop and Android web browsers, but it is untested on iOS.</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sonic Robo Blast 2 -->
+            <article class="project-card">
+                <div class="project-media" data-detail="assets/srb2-web.gif">
+                    <img src="assets/srb2-title.png" alt="Sonic Robo Blast 2 thumbnail" class="project-thumbnail">
+                    <img src="" alt="Web browser demonstration of Sonic Robo Blast 2" class="project-detail-img">
+                    <div class="spinner"></div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2 class="project-title">Sonic Robo Blast 2</h2>
+                        <span class="project-years">2018 - 2020</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">JS</span>
+                        <span class="tech-tag">WebAssembly (Emscripten)</span>
+                    </div>
+                    <p class="project-description">
+                        <a href="https://www.srb2.org" target="_blank">Sonic Robo Blast 2</a> is a 3D Sonic the Hedgehog fangame with over two decades of community history. Originally built in C as a desktop-only application, I ported it to run in the
+                        web browser by using the Emscripten compiler. I adapted the game's asset loading and audio subsystems to operate within the browser's constraints. This included loading textures in an on-demand fashion and restructuring the audio
+                        system to support streaming music delivery and stable playback across environments.
+                    </p>
+                    <p class="project-description">
+                        The result has run on PC, Chromebook, iPhone, and Android without installation. To make that practical, I built an asset streaming pipeline that gets players into the game before the full download completes, a local storage layer that eliminates re-downloads
+                        on repeat visits, and an installable app experience for mobile devices. The interface adapts to the player's platform — adjusting controls, instructions, and available quality settings — with a separate low-end build targeting
+                        devices where memory and performance are constrained.
+                    </p>
+                    <p class="project-description">
+                        Besides these features, I also contributed as a gameplay programmer.
+                    </p>
+                    <div class="action-container">
+                        <a href="https://vinmannie.github.io/srb2web/" target="_blank" rel="noopener noreferrer" class="btn">Play Game</a>
+                        <span class="action-info">Works only on desktop web browsers for now.</span>
+                    </div>
+                </div>
+            </article>
+        </main>
     </div>
-    <div id="content">
-      <p><a href="https://github.com/devappd">Visit @devappd on GitHub...</a></p>
-    </div>
-    <script type="text/javascript">
-      setTimeout(function(){ document.body.classList.add('lapsed'); }, 5000);
-    </script>
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
