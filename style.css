@@ -175,6 +175,8 @@ h1 {
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #18181b;
+    touch-action: pan-y;
+    /* Allow vertical scrolling, handle horizontal in JS */
 }
 
 .project-thumbnail {
@@ -186,6 +188,8 @@ h1 {
     top: 0;
     left: 0;
     z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
 }
 
 .project-detail-img {
@@ -198,7 +202,8 @@ h1 {
     left: 0;
     z-index: 2;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
 }
 
 .project-detail-img.loaded {

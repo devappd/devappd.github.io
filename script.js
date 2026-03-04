@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupCarousel(container, img, url) {
         const nextBtn = container.querySelector('.carousel-btn.next');
         const prevBtn = container.querySelector('.carousel-btn.prev');
+        const thumbnail = container.querySelector('.project-thumbnail');
         let detailLoaded = false;
 
         const toggleDetail = () => {
@@ -77,24 +78,77 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Swipe detection
-        let touchStartX = 0;
-        let touchEndX = 0;
+        // Refined Swipe detection with visual feedback
+        let startX = 0;
+        let startY = 0;
+        let deltaX = 0;
+        let deltaY = 0;
+        let isScrolling = false;
+        let isSwiping = false;
 
         container.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isScrolling = false;
+            isSwiping = false;
+            deltaX = 0;
+
+            // Disable transitions for real-time tracking
+            [img, thumbnail].forEach(el => {
+                if (el) el.style.transition = 'none';
+            });
         }, { passive: true });
 
-        container.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
+        container.addEventListener('touchmove', (e) => {
+            if (isScrolling) return;
 
-        function handleSwipe() {
-            const threshold = 50;
-            if (Math.abs(touchEndX - touchStartX) > threshold) {
-                toggleDetail();
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            deltaX = touchX - startX;
+            deltaY = touchY - startY;
+
+            // Determine if user is swiping horizontally or scrolling vertically
+            if (!isSwiping) {
+                if (Math.abs(deltaY) > Math.abs(deltaX)) {
+                    isScrolling = true;
+                    return;
+                } else if (Math.abs(deltaX) > 10) {
+                    isSwiping = true;
+                }
             }
-        }
+
+            if (isSwiping) {
+                // Prevent vertical scroll while swiping
+                if (e.cancelable) e.preventDefault();
+
+                // Visual feedback: slide the active image
+                const activeImg = img.classList.contains('loaded') ? img : thumbnail;
+                if (activeImg) {
+                    activeImg.style.transform = `translateX(${deltaX}px)`;
+                }
+            }
+        }, { passive: false });
+
+        container.addEventListener('touchend', () => {
+            // Re-enable transitions
+            [img, thumbnail].forEach(el => {
+                if (el) el.style.transition = '';
+            });
+
+            if (isSwiping) {
+                const threshold = 60;
+                if (Math.abs(deltaX) > threshold) {
+                    toggleDetail();
+                }
+            }
+
+            // Snap back
+            [img, thumbnail].forEach(el => {
+                if (el) el.style.transform = '';
+            });
+
+            isSwiping = false;
+            isScrolling = false;
+        }, { passive: true });
     }
 });

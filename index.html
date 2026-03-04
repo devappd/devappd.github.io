@@ -20,8 +20,8 @@
                 <a href="https://github.com/devappd" target="_blank" rel="noopener noreferrer" class="profile-link">GitHub</a>
             </div>
             <p class="summary">
-                Video game software engineer with 4-1/2 years of experience in the AAA game industry and 3 years of experience in indie development. I work in the intersection of HTML5 and C++ games, pursuing high-fidelity experiences that perform on many devices, leveraging
-                the ubiquity of web browsers to reach a wide variety of players.
+                Video game software engineer with 4-1/2 years of experience in the AAA game industry and 3 years of experience in indie development. I work in the intersection of HTML5 and C++ games, pursuing high-fidelity experiences that leverage the ubiquity of web
+                browsers to reach a wide audience.
             </p>
         </header>
 
@@ -62,8 +62,8 @@
                         <span class="tech-tag">C#/.NET</span>
                     </div>
                     <p class="project-description">
-                        Over four and a half years, I contributed to <a href="https://www.zenimaxonline.com/" target="_blank">ZeniMax Online</a>'s unannounced AAA MMORPG by designing automated testing pipelines. I worked in the game engine, build pipeline,
-                        and CI/CD system to optimize unit tests and run them to produce performance statistics. I also designed a GUI testing pipeline to validate our internal design tools which reduced our QA team's test time by 30%.
+                        Over four and a half years, I designed automated testing pipelines for <a href="https://www.zenimaxonline.com/" target="_blank">ZeniMax Online</a>'s unannounced AAA MMORPG. I worked in the game engine, build pipeline, and CI/CD
+                        system to optimize tests and run them to produce performance statistics. I also designed a GUI testing pipeline to validate our internal design tools which reduced our QA team's test time by 30%.
                     </p>
                 </div>
             </article>
@@ -91,13 +91,11 @@
                     <p class="project-description">
                         <a href="https://spaddlewit.com/RolyPolyPutt/" target="_blank">Roly Poly Putt</a> is a wacky physics-based 3D platformer released for iOS and Android where YOU are the golf ball! As a proof-of-concept, I ported the C++ game engine
                         to run in web browsers via WebAssembly. I addressed the technical gap between how a traditional game is structured and how browsers operate. I designed a custom CMake-based build pipeline to automate compilation and asset packaging,
-                        bundling game resources into a browser-accessible virtual filesystem and configuring the output for WebGL rendering and multi-threaded execution.
+                        bundling game resources into a browser-accessible virtual filesystem.
                     </p>
                     <p class="project-description">
-                        Beyond the build system, I made targeted adaptations to the engine's C++ source at every layer of the stack. I restructured the traditional blocking game loop to yield control back to the browser each frame, replaced synchronous networking calls with
-                        async equivalents to keep the UI responsive, and rerouted filesystem operations through browser-compatible APIs since standard directory scanning doesn't function in the sandboxed web environment. I resolved audio compatibility
-                        challenges by offloading decoding to the browser's native engine, reducing WebAssembly runtime overhead. Throughout, I isolated all web-specific logic using compile-time guards, keeping the desktop and web codebases maintainable
-                        within a single source tree.
+                        Beyond the build system, I made targeted adaptations to the engine's C++ source. I replaced synchronous networking calls with async equivalents to keep the UI responsive and rerouted filesystem operations through browser-compatible APIs since standard
+                        directory scanning doesn't function in the sandboxed web environment. I resolved audio compatibility challenges by offloading decoding to the browser's native engine, reducing WebAssembly runtime overhead.
                     </p>
                     <p class="project-description">
                         I released a few of these improvements on my <a href="https://github.com/devappd" target="_blank">GitHub profile</a>.
@@ -136,7 +134,7 @@
                     </p>
                     <p class="project-description">
                         The result has run on PC, Chromebook, iPhone, and Android without installation. To make that practical, I built an asset streaming pipeline that gets players into the game before the full download completes, a local storage layer that eliminates re-downloads
-                        on repeat visits, and an installable app experience for mobile devices. The interface adapts to the player's platform — adjusting controls, instructions, and available quality settings — with a separate low-end build targeting
+                        on repeat visits, and an installable app experience for mobile devices. The interface adapts to the player's platform -- adjusting controls, instructions, and available quality settings -- with a separate low-end build targeting
                         devices where memory and performance are constrained.
                     </p>
                     <p class="project-description">
@@ -144,7 +142,7 @@
                     </p>
                     <div class="action-container">
                         <a href="https://vinmannie.github.io/srb2web/" target="_blank" rel="noopener noreferrer" class="btn">Play Game</a>
-                        <span class="action-info">Works only on desktop web browsers for now.</span>
+                        <span class="action-info">The linked demo works on desktop web browsers whereas mobile devices have not been verified to work.</span>
                     </div>
                 </div>
             </article>
