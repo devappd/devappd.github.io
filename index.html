@@ -86,16 +86,15 @@
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">JS</span>
-                        <span class="tech-tag">WebAssembly (Emscripten)</span>
+                        <span class="tech-tag">WebAssembly (via Emscripten)</span>
                     </div>
                     <p class="project-description">
                         <a href="https://spaddlewit.com/RolyPolyPutt/" target="_blank">Roly Poly Putt</a> is a wacky physics-based 3D platformer released for iOS and Android where YOU are the golf ball! As a proof-of-concept, I ported the C++ game engine
-                        to run in web browsers via WebAssembly. I addressed the technical gap between how a traditional game is structured and how browsers operate. I designed a custom CMake-based build pipeline to automate compilation and asset packaging,
-                        bundling game resources into a browser-accessible virtual filesystem.
+                        to run in web browsers via WebAssembly. I addressed the technical gap between how a traditional game is structured and how browsers operate.
                     </p>
                     <p class="project-description">
-                        Beyond the build system, I made targeted adaptations to the engine's C++ source. I replaced synchronous networking calls with async equivalents to keep the UI responsive and rerouted filesystem operations through browser-compatible APIs since standard
-                        directory scanning doesn't function in the sandboxed web environment. I resolved audio compatibility challenges by offloading decoding to the browser's native engine, reducing WebAssembly runtime overhead.
+                        I designed a custom CMake-based build pipeline to automate compilation and asset packaging, bundling game resources into a browser-accessible virtual filesystem. Beyond the build system, I replaced synchronous networking calls with async equivalents to
+                        keep the UI responsive and I resolved audio compatibility challenges by offloading decoding to the browser's native engine, reducing WebAssembly runtime overhead.
                     </p>
                     <p class="project-description">
                         I released a few of these improvements on my <a href="https://github.com/devappd" target="_blank">GitHub profile</a>.
@@ -125,7 +124,7 @@
                         <span class="tech-tag">C</span>
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">JS</span>
-                        <span class="tech-tag">WebAssembly (Emscripten)</span>
+                        <span class="tech-tag">WebAssembly (via Emscripten)</span>
                     </div>
                     <p class="project-description">
                         <a href="https://www.srb2.org" target="_blank">Sonic Robo Blast 2</a> is a 3D Sonic the Hedgehog fangame with over two decades of community history. Originally built in C as a desktop-only application, I ported it to run in the
@@ -142,7 +141,7 @@
                     </p>
                     <div class="action-container">
                         <a href="https://vinmannie.github.io/srb2web/" target="_blank" rel="noopener noreferrer" class="btn">Play Game</a>
-                        <span class="action-info">The linked demo works on desktop web browsers whereas mobile devices have not been verified to work.</span>
+                        <span class="action-info">The linked demo works on desktop web browsers but mobile devices have not been verified to work.</span>
                     </div>
                 </div>
             </article>
